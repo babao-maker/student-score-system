@@ -22,3 +22,7 @@ def modify_student(student_list):
             break
     if not found:
         print(f"未找到姓名为【{name}】的学生")
+if __name__ == "__main__":
+    modify_student()
+
+
