@@ -1,0 +1,35 @@
+[1mdiff --git a/student.py b/student.py[m
+[1mindex 92aedf0..ca7541f 100644[m
+[1m--- a/student.py[m
+[1m+++ b/student.py[m
+[36m@@ -1,6 +1,24 @@[m
+[31m-def show_student():[m
+[31m-    print("Student Management System")[m
+[31m-[m
+[31m-[m
+[31m-if __name__ == "__main__":[m
+[31m-    show_student()[m
+[32m+[m[32mdef modify_student(student_list):[m
+[32m+[m[32m    """[m
+[32m+[m[32m    修改学生成绩[m
+[32m+[m[32m    :param student_list: 全局学生列表，每个元素是字典 {"name":xxx, "score":xxx}[m
+[32m+[m[32m    :return: 无返回，直接修改列表里的数据[m
+[32m+[m[32m    """[m
+[32m+[m[32m    name = input("请输入要修改的学生姓名：").strip()[m
+[32m+[m[32m    found = False[m
+[32m+[m[32m    for stu in student_list:[m
+[32m+[m[32m        if stu["name"] == name:[m
+[32m+[m[32m            print(f"找到学生：{name}，原成绩：{stu['score']}")[m
+[32m+[m[32m            try:[m
+[32m+[m[32m                new_score = float(input("请输入新成绩："))[m
+[32m+[m[32m                if 0 <= new_score <= 100:[m
+[32m+[m[32m                    stu["score"] = new_score[m
+[32m+[m[32m                    print("修改成功！")[m
+[32m+[m[32m                else:[m
+[32m+[m[32m                    print("成绩必须在0~100之间，修改失败")[m
+[32m+[m[32m            except ValueError:[m
+[32m+[m[32m                print("输入不是有效数字，修改失败")[m
+[32m+[m[32m            found = True[m
+[32m+[m[32m            break[m
+[32m+[m[32m    if not found:[m
+[32m+[m[32m        print(f"未找到姓名为【{name}】的学生")[m
