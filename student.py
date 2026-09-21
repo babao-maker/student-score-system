@@ -8,9 +8,7 @@ def add_name(student_dict):
     student_dict[name] = ""
     print(f"学生【{name}】姓名录入成功，请后续录入成绩！")
 
-if __name__ == "__main__":
-    student_dict = {}
-    add_name(student_dict)
+
 
 def add_score(student_dict):
     # 录入学生姓名
@@ -34,5 +32,7 @@ def add_score(student_dict):
 if __name__ == "__main__":
     student_dict = {}
     # 再录入成绩
+    add_name(student_dict)
+
     add_score(student_dict)
 
