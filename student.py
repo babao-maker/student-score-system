@@ -1,4 +1,5 @@
 
+
 def add_name(student_dict):
     name = input("请输入学生姓名：")
     if name in student_dict:
@@ -29,10 +30,21 @@ def add_score(student_dict):
     print(f"学生【{name}】成绩【{score}】录入成功！")
 
 
+
+
+def show_student(student_dict):
+    print("Student Management System")
+    keyword = input("请输入要查询的学生姓名：")
+    if keyword in student_dict:
+        print(f"查询成功！姓名：{keyword}，成绩：{student_dict[keyword]}")
+    else:
+        print("未找到该学生信息！")
+
+   
 if __name__ == "__main__":
     student_dict = {}
     # 再录入成绩
     add_name(student_dict)
 
     add_score(student_dict)
-
+    show_student(student_dict)
